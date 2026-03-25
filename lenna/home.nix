@@ -27,6 +27,8 @@
   # release notes.
   home.stateVersion = "25.11"; # Please read the comment before changing.
 
+#  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
@@ -39,17 +41,20 @@
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     # # fonts?
     # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-
+    pkgs.nerd-fonts.fira-code
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
     # # environment:
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+      pkgs.nerd-fonts._3270
       pkgs.pywal16
       pkgs.waybar
       pkgs.discord
+      pkgs.direnv
   ];
+  fonts.fontconfig.enable = true;
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -64,6 +69,13 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+    ".config/kitty/kitty.conf".text = ''
+      font_size 9.0
+      background_blur 1
+      background_opacity 0.8
+      enable_background_blur yes
+    '';
+    ".icons/default".source = "${pkgs.vanilla-dmz}/share/icons/Vanilla-DMZ";
   };
 
   # Home Manager can also manage your environment variables through
@@ -83,7 +95,7 @@
   #  /etc/profiles/per-user/lenna/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "nano";
   };
 
   # Let Home Manager install and manage itself.
