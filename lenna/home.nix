@@ -63,6 +63,7 @@
       pkgs.direnv
 #      pkgs.vscode
       pkgs.neofetch
+      pkgs.wofi
   ];
   fonts.fontconfig.enable = true;
 

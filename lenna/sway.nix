@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 {
   wayland.windowManager.sway = {
     enable = true;
@@ -9,6 +9,15 @@
       modifier = "Mod4";
       terminal = "kitty";
 
+#      keybindings = let
+#        inherit (config.home-manager.users.lenna.wayland.windowManager.sway.config) modifier menu;
+#      in lib.mkOptionDefault {
+#        "${modifier}+d" = "exec wofi --show drun";
+#      };
+#
+      keybindings = {
+        "Super+d" = "exec wofi --show drun --gtk-dark";
+      };
       startup = [
         { command = "mako"; }
         { command = "nm-applet"; }

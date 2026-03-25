@@ -133,8 +133,7 @@
     networkmanagerapplet
     git
     reaper
-    pcmanfm
-    lxmenu-data
+    nemo
     shared-mime-info
   ];
 
