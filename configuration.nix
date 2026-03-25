@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./plymouth.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -15,16 +16,6 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.plymouth = {
-    enable = true;
-    theme = "dna";
-    themePackages = with pkgs; [
-      (adi1090x-plymouth-themes.override {
-        selected_themes = [ "dna" ];
-      })
-    ];
-  };
-
   networking.hostName = "femtoy"; # Define your hostname.
   security.polkit.enable = true;
 #  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -93,7 +84,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
+    jack.enable = true;
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
@@ -108,11 +99,6 @@
     isNormalUser = true;
     description = "lenna";
     extraGroups = [ "networkmanager" "wheel" ];
-#    packages = with pkgs; [
-      #kdePackages.kate
-    #  thunderbird
-#      nm-applet
-#    ];
   };
 
 #  fonts.packages = with pkgs; [ nerd-fonts ];
@@ -146,9 +132,16 @@
     vscode
     networkmanagerapplet
     git
+    reaper
+    pcmanfm
+    lxmenu-data
+    shared-mime-info
   ];
 
-
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
+  services.devmon.enable = true;
+  
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

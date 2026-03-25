@@ -96,6 +96,10 @@
     ".config/helix/config.toml".text = ''
       theme = "base16_terminal"
     '';
+
+    ".config/nixpkgs/config.nix".text = ''
+      { allowUnfree = true; }
+    '';
   };
 
   # Home Manager can also manage your environment variables through
