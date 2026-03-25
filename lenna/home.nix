@@ -91,6 +91,10 @@
       #!/bin/bash
       (cat ~/.cache/wal/sequences &)
     '';
+
+    ".config/helix/config.toml".text = ''
+      theme = "base16_terminal"
+    '';
   };
 
   # Home Manager can also manage your environment variables through
@@ -110,7 +114,7 @@
   #  /etc/profiles/per-user/lenna/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    EDITOR = "nano";
+    EDITOR = "hx";
   };
 
   # Let Home Manager install and manage itself.
