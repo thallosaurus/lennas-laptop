@@ -19,7 +19,7 @@
     nixosConfigurations.femtoy = nixpkgs.lib.nixosSystem {
       modules = [
         ./configuration.nix
-
+	./femtoy/hardware-configuration.nix
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = false;

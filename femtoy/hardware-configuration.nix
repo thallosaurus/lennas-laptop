@@ -13,9 +13,6 @@
   boot.kernelParams = [
     "radeon.cik_support=0"
     "amdgpu.cik_support=1"
-    "quiet"
-    "udev.log_level=3"
-    "systemd.show_status=auto"
   ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
