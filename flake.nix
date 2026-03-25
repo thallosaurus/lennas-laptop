@@ -24,7 +24,7 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.lenna = import ./lenna/home.nix
+          home-manager.users.lenna = import ./lenna/home.nix;
         }
       ];
     };
