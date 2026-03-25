@@ -88,7 +88,15 @@
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
-    #media-session.enable = true;
+    # media-session.enable = true;
+  };
+
+  services.jack = {
+    jackd.enable = false;
+    alsa.enable = false;
+    loopback = {
+      enable = true;
+    };
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -98,7 +106,7 @@
   users.users.lenna = {
     isNormalUser = true;
     description = "lenna";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "jackaudio" ];
   };
 
 #  fonts.packages = with pkgs; [ nerd-fonts ];
@@ -135,6 +143,7 @@
     reaper
     nemo
     shared-mime-info
+    ardour
   ];
 
   services.gvfs.enable = true;

@@ -15,8 +15,8 @@
 #        "${modifier}+d" = "exec wofi --show drun";
 #      };
 #
-      keybindings = {
-        "Super+d" = "exec wofi --show drun --gtk-dark";
+      keybindings = lib.mkOptionDefault {
+        "Mod4+d" = "exec wofi --show drun --gtk-dark";
       };
       startup = [
         { command = "mako"; }
