@@ -10,9 +10,10 @@
       terminal = "kitty";
 
       startup = [
-        { command = "mako";}
-        { command = "nm-applet";}
-        { command = "waybar";}
+        { command = "mako"; }
+        { command = "nm-applet"; }
+        { command = "waybar"; }
+        { command = "wal -R"; }
       ];
 
       input = {

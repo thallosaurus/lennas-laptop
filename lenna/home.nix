@@ -8,6 +8,7 @@
 
   imports = [
     ./sway.nix
+    ./vscode.nix
   ];
 
   nixpkgs.config = {
@@ -15,8 +16,15 @@
       pkg:
       builtins.elem (lib.getName pkg) [
         "discord"
+        "vscode"
       ];
   };
+
+#  inputs.home-manager.lib.homeManagerConfiguration = {
+#        modules = [
+#          inputs.pywal-nix.homeManagerModules.${pkgs.system}.default
+#        ];
+#      };
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -53,6 +61,7 @@
       pkgs.waybar
       pkgs.discord
       pkgs.direnv
+#      pkgs.vscode
   ];
   fonts.fontconfig.enable = true;
 
@@ -70,12 +79,18 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
     ".config/kitty/kitty.conf".text = ''
-      font_size 9.0
+      include ~/.cache/wal/colors-kitty.conf
+      font_family family="3270 Nerd Font Mono"
+      font_size 11.0
       background_blur 1
       background_opacity 0.8
       enable_background_blur yes
     '';
     ".icons/default".source = "${pkgs.vanilla-dmz}/share/icons/Vanilla-DMZ";
+    ".bashrc".text = ''
+      #!/bin/bash
+      (cat ~/.cache/wal/sequences &)
+    '';
   };
 
   # Home Manager can also manage your environment variables through
