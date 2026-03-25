@@ -62,6 +62,7 @@
       pkgs.discord
       pkgs.direnv
 #      pkgs.vscode
+      pkgs.neofetch
   ];
   fonts.fontconfig.enable = true;
 
@@ -80,8 +81,8 @@
     # '';
     ".config/kitty/kitty.conf".text = ''
       include ~/.cache/wal/colors-kitty.conf
-      font_family family="3270 Nerd Font Mono"
-      font_size 11.0
+      font_family FiraCode Nerd Font Mono
+      font_size 9.0
       background_blur 1
       background_opacity 0.8
       enable_background_blur yes

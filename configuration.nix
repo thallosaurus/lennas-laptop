@@ -15,6 +15,15 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.plymouth = {
+    enable = true;
+    theme = "dna";
+    themePackages = with pkgs; [
+      (adi1090x-plymouth-themes.override {
+        selected_themes = [ "dna" ];
+      })
+    ];
+  };
 
   networking.hostName = "femtoy"; # Define your hostname.
   security.polkit.enable = true;
@@ -107,6 +116,17 @@
   };
 
 #  fonts.packages = with pkgs; [ nerd-fonts ];
+
+#  security.doas.enable = true;
+#  security.sudo.enable = false;
+
+#  security.doas.extraRules = [{
+#    users = ["lenna"];
+#  # Optional, retains environment variables while running commands 
+#  # e.g. retains your NIX_PATH when applying your config
+#    keepEnv = true; 
+#    persist = true;  # Optional, only require password verification a single time
+#  }];
 
   # Install firefox.
   programs.firefox.enable = true;

@@ -12,7 +12,6 @@
       startup = [
         { command = "mako"; }
         { command = "nm-applet"; }
-        { command = "waybar"; }
         { command = "wal -R"; }
       ];
 
@@ -21,6 +20,12 @@
 	        xkb_layout = "de";
         };
       };
+
+      bars = [
+        {
+          command = "swaybar_command waybar";
+        }
+      ];
     };
 
     checkConfig = false;
@@ -44,6 +49,7 @@
       client.unfocused        $color2 #222222 #888888 #292d2e   #1f1e1e
       client.urgent           #999999 #5f676a #999999 #999999   #999999
       client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
     '';
   };
 }
