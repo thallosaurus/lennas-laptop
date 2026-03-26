@@ -92,11 +92,11 @@
       (cat ~/.cache/wal/sequences &)
     '';
 
-    xdg.configFile."helix/config.toml".text = ''
+    ".config/helix/config.toml".text = ''
       theme = "base16_terminal"
     '';
-
-    xdg.configFile."kitty/kitty.conf".text = ''
+  
+    ".config/kitty/kitty.conf".text = ''
       include ~/.cache/wal/colors-kitty.conf
       font_family FiraCode Nerd Font Mono
       font_size 9.0
@@ -105,7 +105,7 @@
       enable_background_blur yes
     '';
 
-    xdg.configFile."wal/templates/colors-waybar-transparent.css".text = ''
+    ".config/wal/templates/colors-waybar-transparent.css".text = ''
       @define-color foreground {foreground};
       @define-color foreground-transparent rgba({foreground.rgb},0.8);
       @define-color background {background};
@@ -130,7 +130,7 @@
       @define-color color15 {color15};
     '';
 
-    xdg.configFile."nixpkgs/config.nix".text = ''
+    ".config/nixpkgs/config.nix".text = ''
       { allowUnfree = true; }
     '';
   };
