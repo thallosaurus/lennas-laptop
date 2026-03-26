@@ -135,10 +135,7 @@
     '';
 
     ".config/neofetch/logo.png".source = ./neofetch/196.png;
-    ".config/neofetch/config.conf".text = ''
-      image_backend="kitty"
-      image_source="~/.config/neofetch/logo.png"
-    '';
+    ".config/neofetch/config.conf".source = ./neofetch/config.conf;
   };
 
   # Home Manager can also manage your environment variables through
