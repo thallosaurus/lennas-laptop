@@ -66,6 +66,7 @@
       pkgs.neofetch
       pkgs.wofi
       pkgs.keepassxc
+      pkgs.wallust
   ];
   fonts.fontconfig.enable = true;
 
