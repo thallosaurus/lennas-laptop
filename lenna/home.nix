@@ -9,6 +9,7 @@
   imports = [
     ./sway.nix
     ./vscode.nix
+    ./waybar.nix
   ];
 
   nixpkgs.config = {
