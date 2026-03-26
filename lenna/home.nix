@@ -133,9 +133,11 @@
     ".config/nixpkgs/config.nix".text = ''
       { allowUnfree = true; }
     '';
-
-    ".config/neofetch/logo.png".source = ./neofetch/196.png;
-    ".config/neofetch/config.conf".source = ./neofetch/config.conf;
+    
+    ".config/neofetch" = {
+      source = "./neofetch";
+      recursive = true;
+    };
   };
 
   # Home Manager can also manage your environment variables through
