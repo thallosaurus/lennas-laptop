@@ -5,6 +5,7 @@
         enable = true;
     };
 
+#    xdg.configFile."waybar"
 #    xdg.configFile."waybar/config.jsonc".source = ./bars/config.jsonc;
     xdg.configFile."waybar" = {
         recursive = true;

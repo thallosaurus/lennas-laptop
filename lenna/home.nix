@@ -109,18 +109,18 @@
 
       [templates]
       # dunst templates
-      dunst.template = "dunstrc.monitor"
-      dunst.target = "~/.config/dunst/dunstrc"
+#      dunst.template = "dunstrc.monitor"
+#      dunst.target = "~/.config/dunst/dunstrc"
 
       # one liner for zathura
-      zathura = { template = 'zath', target = '~/.config/zathura/zathurarc' }
+#      zathura = { template = 'zath', target = '~/.config/zathura/zathurarc' }
 
       # even a shorter way, using directories, but only one level recursion
-      glava = { src = 'glava', dst = '~/.config/glava/', max_depth = 1 }
+#      glava = { src = 'glava', dst = '~/.config/glava/', max_depth = 1 }
 
       # or splited in the dotted syntax
-      res.src = "xres"
-      res.dst = "~/.config/Xresources"
+#      res.src = "xres"
+#      res.dst = "~/.config/Xresources"
 
       # old times, good times. Here I put old pywal templates.
       # NOTE THAT BOTH src AND dst ARE DIRECTORIES!
@@ -136,7 +136,9 @@
       enable_background_blur yes
     '';
 
-    ".config/wallust/templates/colors-waybar-transparent.css".text = ''
+    ".config/wal/templates/colors-kitty.conf".source = ./templates/colors-kitty.conf;
+
+    ".config/wal/templates/colors-waybar-transparent.css".text = ''
       @define-color foreground {foreground};
       @define-color foreground-transparent rgba({foreground.rgb},0.8);
       @define-color background {background};
