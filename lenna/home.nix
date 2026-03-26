@@ -96,6 +96,36 @@
     ".config/helix/config.toml".text = ''
       theme = "base16_terminal"
     '';
+
+    ".config/wallust/wallust.toml".text = ''
+      # Let's keep good old pywal look and feel
+      backend = "wal"
+      #color_space = "lch" # idc about this one..
+      #threshold = "20" # neither about this, since I read wallust does it automagically..
+      # classic look
+      palette = "dark16"
+      # let's keep the contrast very very very clear.
+      check_contrast = true
+
+      [templates]
+      # dunst templates
+      dunst.template = "dunstrc.monitor"
+      dunst.target = "~/.config/dunst/dunstrc"
+
+      # one liner for zathura
+      zathura = { template = 'zath', target = '~/.config/zathura/zathurarc' }
+
+      # even a shorter way, using directories, but only one level recursion
+      glava = { src = 'glava', dst = '~/.config/glava/', max_depth = 1 }
+
+      # or splited in the dotted syntax
+      res.src = "xres"
+      res.dst = "~/.config/Xresources"
+
+      # old times, good times. Here I put old pywal templates.
+      # NOTE THAT BOTH src AND dst ARE DIRECTORIES!
+      pywal = { src = "templates/", dst = '~/.cache/wal/', pywal = true }
+    '';
   
     ".config/kitty/kitty.conf".text = ''
       include ~/.cache/wal/colors-kitty.conf
@@ -106,7 +136,7 @@
       enable_background_blur yes
     '';
 
-    ".config/wal/templates/colors-waybar-transparent.css".text = ''
+    ".config/wallust/templates/colors-waybar-transparent.css".text = ''
       @define-color foreground {foreground};
       @define-color foreground-transparent rgba({foreground.rgb},0.8);
       @define-color background {background};
