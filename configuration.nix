@@ -144,11 +144,25 @@
     nemo
     shared-mime-info
     ardour
+    lxqt.lxqt-policykit
   ];
 
+  programs.xfconf.enable = true;
+  
   services.gvfs.enable = true;
   services.udisks2.enable = true;
-  services.devmon.enable = true;
+  services.samba.enable = true;
+  services.avahi = {
+    enable = true;
+    nssmdns = true;
+    openFirewall = true;
+    publish = {
+      enable = true;
+      userServices = true;
+      addresses = true;
+    };
+  };
+  
   
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

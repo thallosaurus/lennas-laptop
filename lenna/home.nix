@@ -64,8 +64,13 @@
 #      pkgs.vscode
       pkgs.neofetch
       pkgs.wofi
+      pkgs.keepassxc
   ];
   fonts.fontconfig.enable = true;
+
+  gtk.enable = true;
+  gtk.iconTheme.package = lib.mkForce pkgs.papirus-icon-theme;
+  gtk.iconTheme.name = lib.mkForce "Papirus Dark";
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
