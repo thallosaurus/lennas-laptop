@@ -135,7 +135,7 @@
     '';
     
     ".config/neofetch" = {
-      source = "./neofetch";
+      source = ./neofetch;
       recursive = true;
     };
   };
