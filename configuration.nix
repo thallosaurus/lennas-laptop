@@ -147,6 +147,7 @@
     lxqt.lxqt-policykit
     wiremix
     mate.caja-with-extensions
+    adwaita-icon-theme
   ];
 
   programs.xfconf.enable = true;
