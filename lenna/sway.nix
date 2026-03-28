@@ -21,7 +21,8 @@
       startup = [
         { command = "mako"; }
         { command = "nm-applet"; }
-        { command = "wal -R"; }
+#        { command = "wal -R"; }
+        { command = "caja --force-desktop --no-default-window";  }
       ];
 
       input = {
@@ -58,6 +59,16 @@
       client.unfocused        $color2 #222222 #888888 #292d2e   #1f1e1e
       client.urgent           #999999 #5f676a #999999 #999999   #999999
       client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+      # window rules
+      for_window [title="."] floating enable
+      for_window [app_id="kitty"] floating disable
+      for_window [app_id="firefox"] floating disable
+      for_window [app_id="wiremix"] floating enable, resize set width 80ppt, resize set height 40ppt
+      for_window [app_id="wallpaper"] floating enable, resize set width 80ppt, resize set height 50ppt
+      for_window [class="Code"] floating disable; opacity 0.9
+      for_window [shell="xwayland"] title_format "%title [XWayland]"
+      for_window [title="(?:Open|Save) (?:File|Folder|As|file\(s\))"] floating enable; move position center; resize set height 50ppt; resize set width: 50ppt
 
     '';
   };

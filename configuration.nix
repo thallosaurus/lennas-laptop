@@ -145,6 +145,8 @@
     shared-mime-info
     ardour
     lxqt.lxqt-policykit
+    wiremix
+    mate.caja-with-extensions
   ];
 
   programs.xfconf.enable = true;
