@@ -38,4 +38,6 @@
     enable = true;
     enable32Bit = true;
   };
+
+  networking.hostName = "femtoy"; # Define your hostname.
 }

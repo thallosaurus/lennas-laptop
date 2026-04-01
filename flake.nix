@@ -28,5 +28,17 @@
         }
       ];
     };
+    nixosConfigurations.testbed = nixpkgs.lib.nixosSystem {
+      modules = [
+        ./configuration.nix
+        ./testbed/hardware-configuration.nix
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = false;
+          home-manager.useUserPackages = true;
+          home-manager.users.lenna = import ./lenna/home.nix;
+        }
+      ];
+    };
   };
 }
