@@ -8,6 +8,7 @@
     ../../modules/audio.nix
     ../../modules/disable-suspend.nix
     ../../modules/steam.nix
+    ../../modules/wine.nix
   ];
 
   # enable x11 for this pc

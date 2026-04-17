@@ -25,27 +25,22 @@
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/41ae4be8-a5eb-42de-90d5-d81ed833cec2"; }
-    ];
+    [ { device = "/dev/disk/by-uuid/41ae4be8-a5eb-42de-90d5-d81ed833cec2"; } ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
   hardware.graphics = {
     enable = true;
+    enable32Bit = true;
   };
 
   services.xserver.videoDrivers = lib.mkDefault ["nvidia"];
 
   hardware.nvidia = {
     modesetting.enable = true;
-
     powerManagement.enable = true;
-
     open = false;
-
     nvidiaSettings = true;
-
-#    package = config.boot.kernelPackages.nvidiaPackages.legacy_535;
   };
 }
