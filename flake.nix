@@ -71,7 +71,7 @@
         ];
       };
 
-      desktop = nixpkgs.lib.nixosSystem {
+      voidscream = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./modules/common.nix
