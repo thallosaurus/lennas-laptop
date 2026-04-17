@@ -75,8 +75,8 @@
         system = "x86_64-linux";
         modules = [
           ./modules/common.nix
-          ./hosts/desktop
-          ./hosts/desktop/hardware-configuration.nix
+          ./hosts/voidscream
+          ./hosts/voidscream/hardware-configuration.nix
 
           home-manager.nixosModules.home-manager
           {
