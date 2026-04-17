@@ -46,7 +46,7 @@
         adwaita-icon-theme
     ];
 
-    # nixpkgs.config.allowUnfree = true;
+    nixpkgs.config.allowUnfree = true;
       # Enable the OpenSSH daemon.
     services.openssh.enable = true;
 
