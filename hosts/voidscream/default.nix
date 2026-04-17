@@ -9,4 +9,7 @@
     ../../modules/disable-suspend.nix
     ../../modules/steam.nix
   ];
+
+  # enable x11 for this pc
+  services.xserver.enable = true;
 }

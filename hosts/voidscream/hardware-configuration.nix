@@ -48,6 +48,4 @@
 
 #    package = config.boot.kernelPackages.nvidiaPackages.legacy_535;
   };
-
-    networking.hostName = "voidscream"; # Define your hostname.
 }
