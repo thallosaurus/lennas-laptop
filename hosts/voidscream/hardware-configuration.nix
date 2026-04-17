@@ -25,12 +25,12 @@
     };
 
   fileSystems."/mnt/hdd1" = {
-    devide = "/dev/disk/by-uuid/e552bb41-f9df-4fcb-aeb3-72f1a62493a4";
+    device = "/dev/disk/by-uuid/e552bb41-f9df-4fcb-aeb3-72f1a62493a4";
     fsType = "ext4";
   };
 
   fileSystems."/mnt/hdd2" = {
-    devide = "/dev/disk/by-uuid/91d0bf90-868c-4267-9fde-feca9c7e2e3c";
+    device = "/dev/disk/by-uuid/91d0bf90-868c-4267-9fde-feca9c7e2e3c";
     fsType = "ext4";
   };
 
