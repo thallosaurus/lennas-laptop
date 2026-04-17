@@ -13,32 +13,72 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }: {
+  outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
 #    packages.x86_64-linux.hello = nixpkgs.legacyPackages.x86_64-linux.hello;
 #    packages.x86_64-linux.default = self.packages.x86_64-linux.hello;
-    nixosConfigurations.femtoy = nixpkgs.lib.nixosSystem {
-      modules = [
-        ./configuration.nix
-	      ./femtoy/hardware-configuration.nix
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = false;
-          home-manager.useUserPackages = true;
-          home-manager.users.lenna = import ./lenna/home.nix;
-        }
-      ];
-    };
-    nixosConfigurations.testbed = nixpkgs.lib.nixosSystem {
-      modules = [
-        ./configuration.nix
-        ./testbed/hardware-configuration.nix
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = false;
-          home-manager.useUserPackages = true;
-          home-manager.users.lenna = import ./lenna/home.nix;
-        }
-      ];
+    #nixosConfigurations.femtoy = nixpkgs.lib.nixosSystem {
+    #  modules = [
+    #    ./configuration.nix
+	  #    ./femtoy/hardware-configuration.nix
+    #    home-manager.nixosModules.home-manager
+    #    {
+    #      home-manager.useGlobalPkgs = false;
+    #      home-manager.useUserPackages = true;
+    #      home-manager.users.lenna = import ./lenna/home.nix;
+    #    }
+    #  ];
+    #};
+    #nixosConfigurations.testbed = nixpkgs.lib.nixosSystem {
+    #  modules = [
+    #    ./configuration.nix
+    #    ./testbed/hardware-configuration.nix
+    #    home-manager.nixosModules.home-manager
+    #    {
+    #      home-manager.useGlobalPkgs = false;
+    #      home-manager.useUserPackages = true;
+    #      home-manager.users.lenna = import ./lenna/home.nix;
+    #    }
+    #  ];
+    #};
+#
+    #nixosConfigurations.voidscream = nixpkgs.lib.nixosSystem {
+    #  modules = [
+    #    ./configuration.nix
+    #    ./voidscream/hardware-configuration.nix
+    #    home-manager.nixosModules.home-manager
+    #    {
+    #      home-manager.useGlobalPkgs = false;
+    #      home-manager.useUserPackages = true;
+    #      home-manager.users.lenna = import ./lenna/home.nix;
+    #    }
+    #  ];
+    #}
+
+    nixosConfigurations = {
+      femtoy = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./modules/common.nix
+          ./hosts/femtoy
+          ./hosts/femtoy/hardware-configuration.nix
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = false;
+            home-manager.useUserPackages = true;
+            home-manager.users.lenna = import ./lenna;
+          }
+        ];
+      };
+
+      desktop = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./modules/common.nix
+          ./hosts/desktop
+          ./hosts/desktop/hardware-configuration.nix
+        ];
+      }
     };
   };
 }
