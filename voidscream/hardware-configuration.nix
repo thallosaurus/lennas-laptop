@@ -9,7 +9,7 @@
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "usbhid" "ums_realtek" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
+  boot.initrd.kernelModules = [ "nvidia" "nvidia_uvm" "nvidia_drm" "nvidia_modeset" ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
@@ -48,4 +48,6 @@
 
 #    package = config.boot.kernelPackages.nvidiaPackages.legacy_535;
   };
+
+    networking.hostName = "voidscream"; # Define your hostname.
 }

@@ -8,6 +8,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./plymouth.nix
+      ./ly.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -15,6 +17,8 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+#  services.displayManager.sddm.enable = false;
 
   networking.hostName = "voidscream"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -49,7 +53,7 @@
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
+#  services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
@@ -105,6 +109,7 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
+    git
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -134,4 +139,13 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.11"; # Did you read the comment?
 
+  systemd.sleep.extraConfig = ''
+    AllowSuspend=no
+    AllowHibernation=no
+    AllowHybridSleep=no
+  '';
+
+  programs.steam = {
+    enable = true;
+  };
 }
