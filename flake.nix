@@ -64,9 +64,9 @@
 
           home-manager.nixosModules.home-manager
           {
-            home-manager.useGlobalPkgs = false;
+            home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.lenna = import ./lenna;
+            home-manager.users.lenna = import ./home/lenna;
           }
         ];
       };
@@ -77,8 +77,15 @@
           ./modules/common.nix
           ./hosts/desktop
           ./hosts/desktop/hardware-configuration.nix
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.lenna = import ./home/lenna;
+          }
         ];
-      }
+      };
     };
   };
 }
