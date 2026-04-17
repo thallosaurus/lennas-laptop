@@ -42,7 +42,7 @@
   
     extraConfig = ''
       include ~/.cache/wal/colors-sway
-      output * bg ~/repos/lennas-laptop/wallpaper.png fill
+      output * bg ~/repos/lennas-laptop/momosoft.jpg center
       shadows enable
 #      corner_radius 11
       blur_radius 7
