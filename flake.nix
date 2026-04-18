@@ -20,6 +20,10 @@
       url = "github:thallosaurus/momosoft-bootscreen";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    pywal-nix = {
+      url = "github:Fuwn/pywal.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
@@ -36,6 +40,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.users.lenna = import ./home/lenna;
           }
         ];
@@ -53,6 +58,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.users.lenna = import ./home/lenna;
           }
         ];
