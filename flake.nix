@@ -11,10 +11,14 @@
       # to avoid problems caused by different versions of nixpkgs.
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    plasma-manager = {
-      url = "github:nix-community/plasma-manager";
+#    plasma-manager = {
+#      url = "github:nix-community/plasma-manager";
+#      inputs.nixpkgs.follows = "nixpkgs";
+#      inputs.home-manager.follows = "home-maanger";
+#    };
+    momosoft-bootscreen = {
+      url = "path:/home/lenna/repos/momosoft-bootscreen";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-maanger";
     };
   };
 
@@ -74,6 +78,10 @@
             home-manager.users.lenna = import ./home/lenna;
           }
         ];
+
+        specialArgs = {
+          inherit inputs;
+        };
       };
 
       voidscream = nixpkgs.lib.nixosSystem {
