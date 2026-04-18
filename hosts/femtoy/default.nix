@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ inputs, pkgs, ... }: {
   networking.hostName = "femtoy";
   imports = [
     ../../modules/common.nix
