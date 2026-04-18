@@ -143,8 +143,8 @@
     ".config/wal/templates/colors-kitty.conf".source = ./templates/colors-kitty.conf;
     ".config/wallust/templates/templates/colors-kitty.conf".source = ./templates/colors-kitty.conf;
 
-    ".config/wal/templates/colors-waybar-transparent.css".text = ./templates/colors-waybar-transparent.css;
-    ".config/wallust/templates/templates/colors-waybar-transparent.css".text = ./templates/colors-waybar-transparent.css;
+    ".config/wal/templates/colors-waybar-transparent.css".source = ./templates/colors-waybar-transparent.css;
+    ".config/wallust/templates/templates/colors-waybar-transparent.css".source = ./templates/colors-waybar-transparent.css;
 
     ".config/nixpkgs/config.nix".text = ''
       { allowUnfree = true; }
