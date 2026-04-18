@@ -62,7 +62,7 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
       pkgs.nerd-fonts._3270
-      pkgs.pywal16
+#      pkgs.pywal16
       pkgs.waybar
       pkgs.discord
       pkgs.direnv
@@ -196,6 +196,8 @@
   home.sessionVariables = {
     EDITOR = "hx";
   };
+
+  programs.pywal.enable = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
