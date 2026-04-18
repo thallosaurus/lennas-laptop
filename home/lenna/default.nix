@@ -10,6 +10,7 @@
     ./sway.nix
     ./vscode.nix
     ./waybar.nix
+    inputs.plasma-manager.homeManagerModules.plasma-manager
   ];
 
   nixpkgs.config = {
