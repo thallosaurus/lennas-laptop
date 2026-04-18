@@ -6,6 +6,7 @@
     ../../modules/ly.nix
     ../../modules/plymouth.nix
     ../../modules/sway.nix
+    ../../modules/xfce.nix # for testing
     ../../modules/audio.nix
   ];
 
