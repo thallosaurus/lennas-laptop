@@ -62,6 +62,7 @@
     nixosConfigurations = {
       femtoy = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
         modules = [
           ./modules/common.nix
           ./hosts/femtoy
