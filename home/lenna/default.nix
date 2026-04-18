@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -10,6 +10,7 @@
     ./sway.nix
     ./vscode.nix
     ./waybar.nix
+    inputs.pywal-nix.homeManagerModules.x86_64-linux.default
 #    inputs.plasma-manager.homeManagerModules.plasma-manager
   ];
 
