@@ -101,11 +101,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1776540777,
-        "narHash": "sha256-yzJ4LXMFHFdZnjRcg1OlUIJAgYB47qYe6CcTHRGoiqo=",
+        "lastModified": 1776543052,
+        "narHash": "sha256-RgZlyoRxSIpOvDVzThedEoN1Y29UGI5dNZPmn2YNprE=",
         "owner": "thallosaurus",
         "repo": "momosoft-bootscreen",
-        "rev": "a6cfccffc3e1d31bd870fb9f900cf0a40c41cd18",
+        "rev": "1787f3b708983fecbf4b1d383d25df2ec75b806c",
         "type": "github"
       },
       "original": {
