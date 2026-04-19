@@ -10,6 +10,7 @@
     ./sway.nix
     ./vscode.nix
     ./waybar.nix
+    ./xfce.nix
     inputs.pywal-nix.homeManagerModules.x86_64-linux.default
 #    inputs.plasma-manager.homeManagerModules.plasma-manager
   ];

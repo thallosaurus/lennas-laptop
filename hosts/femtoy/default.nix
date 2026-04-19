@@ -8,6 +8,7 @@
     ../../modules/sway.nix
     ../../modules/xfce.nix # for testing
     ../../modules/audio.nix
+    ../../modules/fonts.nix
   ];
 
   # laptop-specific: power management, touchpad, etc

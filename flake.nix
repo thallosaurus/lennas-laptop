@@ -11,11 +11,11 @@
       # to avoid problems caused by different versions of nixpkgs.
       inputs.nixpkgs.follows = "nixpkgs";
     };
-#    plasma-manager = {
-#      url = "github:nix-community/plasma-manager";
-#      inputs.nixpkgs.follows = "nixpkgs";
-#      inputs.home-manager.follows = "home-maanger";
-#    };
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      #inputs.home-manager.follows = "home-maanger";
+    };
     momosoft-bootscreen = {
       url = "github:thallosaurus/momosoft-bootscreen";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,7 +26,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
+  outputs = inputs@{ self, nixpkgs, home-manager, plasma-manager, ... }: {
     nixosConfigurations = {
       femtoy = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -38,8 +38,9 @@
 
           home-manager.nixosModules.home-manager
           {
-            home-manager.useGlobalPkgs = true;
+            home-manager.useGlobalPkgs = false;
             home-manager.useUserPackages = true;
+            home-manager.sharedModules = [ plasma-manager.homeModules.plasma-manager ];
             home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.users.lenna = import ./home/lenna;
           }
@@ -57,8 +58,9 @@
           home-manager.nixosModules.home-manager
           {
             home-manager.backupFileExtension = "hm-backup";
-            home-manager.useGlobalPkgs = true;
+            home-manager.useGlobalPkgs = false;
             home-manager.useUserPackages = true;
+            home-manager.sharedModules = [ plasma-manager.homeModules.plasma-manager ];
             home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.users.lenna = import ./home/lenna;
           }
