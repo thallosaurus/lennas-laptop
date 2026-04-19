@@ -36,12 +36,12 @@
         vscode
         networkmanagerapplet
         git
-        reaper
+        #reaper
         nemo
         shared-mime-info
         #ardour
         lxqt.lxqt-policykit
-        wiremix
+        #wiremix
         mate.caja-with-extensions
         adwaita-icon-theme
     ];

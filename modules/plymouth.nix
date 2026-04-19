@@ -12,7 +12,7 @@
       inputs.momosoft-bootscreen.packages.x86_64-linux.default
     ];
   };
-    boot.kernelParams = [
+  boot.kernelParams = [
     "quiet"
     "udev.log_level=3"
     "systemd.show_status=auto"
