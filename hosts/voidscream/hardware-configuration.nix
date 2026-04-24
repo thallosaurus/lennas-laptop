@@ -27,19 +27,19 @@
   fileSystems."/mnt/hdd1" = {
     device = "/dev/disk/by-uuid/e552bb41-f9df-4fcb-aeb3-72f1a62493a4";
     fsType = "ext4";
-    options = [ "defaults" "nofail" ];
+    options = [ "defaults" "nofail" "exec" ];
   };
 
   fileSystems."/mnt/hdd2" = {
     device = "/dev/disk/by-uuid/91d0bf90-868c-4267-9fde-feca9c7e2e3c";
     fsType = "ext4";
-    options = [ "defaults" "nofail" ];
+    options = [ "defaults" "nofail" "exec" ];
   };
 
   fileSystems."/mnt/hdd3" = {
     device = "/dev/disk/by-uuid/5ebbe6ac-f365-445e-924b-d8e7500cb91c";
     fsType = "ext4";
-    options = [ "defaults" "nofail" ];
+    options = [ "defaults" "nofail" "exec" ];
   };
 
   swapDevices =
